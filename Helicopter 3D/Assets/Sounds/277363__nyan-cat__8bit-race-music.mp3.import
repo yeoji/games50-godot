@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/277363__nyan-cat__8bit-race-music.mp3-6148cd8039efc7176bf49053e0cb7e05.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/277363__nyan-cat__8bit-race-music.mp3"
+dest_files=[ "res://.import/277363__nyan-cat__8bit-race-music.mp3-6148cd8039efc7176bf49053e0cb7e05.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

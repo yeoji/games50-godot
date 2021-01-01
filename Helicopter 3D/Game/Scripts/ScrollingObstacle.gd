@@ -23,6 +23,9 @@ func _on_body_entered(body: Node):
 		_destroy_helicopter(body)
 
 func _destroy_helicopter(heli: Node):
+	var explosion_sound: AudioStreamPlayer = get_parent().get_node("ExplosionSound")
+	explosion_sound.play()
+	
 	# play explosions
 	var explosion: CPUParticles = load("res://Game/Explosion.tscn").instance()
 	var smoke: CPUParticles = explosion.get_node("Smoke")

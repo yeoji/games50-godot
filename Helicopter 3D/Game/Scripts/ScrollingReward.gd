@@ -23,6 +23,9 @@ func _on_body_entered(body):
 		pickup.set_emitting(true)
 		get_parent().call_deferred('add_child_below_node', self, pickup)
 	
+		var pickup_sound: AudioStreamPlayer = get_parent().get_node("PickupSound")
+		pickup_sound.play()
+		
 		PlayerState.score += points
 		
 		var score_text: RichTextLabel = get_parent().get_node("Score")
