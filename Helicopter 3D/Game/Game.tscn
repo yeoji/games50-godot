@@ -49,6 +49,15 @@ max_y = 18.0
 max_spawn_interval = 3000
 max_instance_per_interval = 3
 
+[node name="DiamondSpawner" type="Node" parent="."]
+script = ExtResource( 4 )
+paths = [ "res://Game/Diamond.tscn" ]
+copies_of_each = 1
+min_y = 3.0
+max_y = 18.0
+min_spawn_interval = 5000
+max_spawn_interval = 10000
+
 [node name="Score" type="RichTextLabel" parent="."]
 margin_left = 1074.0
 margin_top = 41.0
