@@ -3,6 +3,10 @@ extends Spatial
 export var velocity: float = 20
 
 var current_velocity: float = 0
+var explosion: CPUParticles = null
+
+func _ready():
+	explosion = load("res://Game/Explosion.tscn").instance()
 
 func _process(delta: float) -> void:
 	var motion: Vector3 = Vector3.LEFT * delta * current_velocity
@@ -15,19 +19,13 @@ func reset() -> void:
 	current_velocity = 0
 
 func _on_body_entered(body: Node):
-	if body.name == "Helicopter":
-		var game_over_text: Label = get_parent().get_node("GameOver")
-		game_over_text.set_text(str("GAME OVER\nYOUR SCORE:\n", PlayerState.score, " COINS\nPRESS SPACE TO RESTART!"))
-		game_over_text.show()
-		
-		_destroy_helicopter(body)
+	pass
 
 func _destroy_helicopter(heli: Node):
 	var explosion_sound: AudioStreamPlayer = get_parent().get_node("ExplosionSound")
 	explosion_sound.play()
 	
 	# play explosions
-	var explosion: CPUParticles = load("res://Game/Explosion.tscn").instance()
 	var smoke: CPUParticles = explosion.get_node("Smoke")
 	explosion.transform.origin = heli.get("translation")
 	smoke.transform.origin = heli.get("translation")

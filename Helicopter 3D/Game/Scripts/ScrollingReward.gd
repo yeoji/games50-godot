@@ -4,6 +4,10 @@ export var points: int = 1
 export var velocity: float = 20
 
 var current_velocity: float = 0
+var pickup: CPUParticles = null
+
+func _ready():
+	pickup = load("res://Game/Pickup.tscn").instance()
 
 func _process(delta: float) -> void:
 	var motion: Vector3 = Vector3.LEFT * delta * current_velocity
@@ -18,7 +22,6 @@ func reset() -> void:
 	
 func _on_body_entered(body):
 	if body.name == "Helicopter":
-		var pickup: CPUParticles = load("res://Game/Pickup.tscn").instance()
 		pickup.transform.origin = body.get("translation")
 		pickup.set_emitting(true)
 		get_parent().call_deferred('add_child_below_node', self, pickup)
