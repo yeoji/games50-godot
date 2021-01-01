@@ -17,7 +17,7 @@ func reset() -> void:
 func _on_body_entered(body: Node):
 	if body.name == "Helicopter":
 		var game_over_text: Label = get_parent().get_node("GameOver")
-		game_over_text.set_text(game_over_text.text % PlayerState.score)
+		game_over_text.set_text(str("GAME OVER\nYOUR SCORE:\n", PlayerState.score, " COINS\nPRESS SPACE TO RESTART!"))
 		game_over_text.show()
 		
 		_destroy_helicopter(body)
@@ -32,4 +32,4 @@ func _destroy_helicopter(heli: Node):
 	smoke.set_emitting(true)
 	get_parent().call_deferred('add_child_below_node', self, explosion)
 	
-	heli.queue_free()
+	heli.destroy()

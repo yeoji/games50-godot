@@ -11,3 +11,13 @@ func _physics_process(delta: float) -> void:
 	var motion: Vector3 = Vector3.UP * direction * delta * speed
 	
 	move_and_collide(motion)
+
+func destroy() -> void:
+	var collision: CollisionShape = get_node("BodyCollision")
+	collision.set_disabled(true)
+	hide()
+
+func reset() -> void:
+	var collision: CollisionShape = get_node("BodyCollision")
+	collision.set_disabled(false)
+	show()
