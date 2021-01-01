@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+min_value = -400.0
+max_value = 400.0
+_data = [ Vector2( 0, 400 ), 0.0, 6306.31, 0, 0, Vector2( 0.162857, 10.8108 ), -449.027, -449.027, 0, 0, Vector2( 1, -268.297 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=4]
+max_value = 2.5
+_data = [ Vector2( 0, 2.48241 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.320451 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.00331126, 0.00993378, 0.268212, 0.52649, 0.86755 )
+colors = PoolColorArray( 0.047247, 0.0449036, 0.0199776, 1, 0, 0, 0, 1, 0.992188, 0.942975, 0.41953, 1, 0.972279, 0.337847, 0.166254, 1, 0, 0, 0, 1, 0.827463, 0.110212, 0.110212, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0.00285714, 199.735 ), 0.0, 2895.17, 0, 0, Vector2( 0.145714, -97.5619 ), 0.0, 0.0, 0, 0, Vector2( 1, -104.769 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=9]
+min_value = 0.99
+max_value = 5.0
+_data = [ Vector2( 0.0171428, 1.03269 ), 0.0, 0.0, 0, 0, Vector2( 1, 5 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0.192053, 0.940397, 0.986755 )
+colors = PoolColorArray( 0.052413, 0.052413, 0.052413, 0.717647, 0.126632, 0.126632, 0.126632, 0.14902, 0.216475, 0.216475, 0.216475, 0.227451 )
+
+[node name="Explosion" type="CPUParticles"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+emitting = false
+amount = 200
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.8
+explosiveness = 0.5
+mesh = SubResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3( 0, 0, 0 )
+spread = 80.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+linear_accel = 100.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 3 )
+radial_accel = -100.0
+radial_accel_random = 0.5
+damping = 50.0
+damping_random = 1.0
+scale_amount = 2.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 4 )
+color_ramp = SubResource( 5 )
+
+[node name="Smoke" type="CPUParticles" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+emitting = false
+amount = 500
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource( 7 )
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 80.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.15
+orbit_velocity_random = 1.0
+orbit_velocity_curve = null
+linear_accel = 100.0
+linear_accel_random = 0.5
+linear_accel_curve = SubResource( 8 )
+scale_amount = 2.0
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 9 )
+color_ramp = SubResource( 10 )

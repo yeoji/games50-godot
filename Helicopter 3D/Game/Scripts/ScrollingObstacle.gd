@@ -19,4 +19,10 @@ func _on_body_entered(body: Node):
 		var game_over_text: RichTextLabel = get_parent().get_node("GameOver")
 		game_over_text.show()
 		
+		# play explosions
+		var explosion: CPUParticles = load("res://Game/Explosion.tscn").instance()
+		explosion.transform.origin = body.get("translation")
+		explosion.set_emitting(true)
+		get_parent().call_deferred('add_child_below_node', self, explosion)
+		
 		body.queue_free()
