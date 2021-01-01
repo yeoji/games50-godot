@@ -7,7 +7,7 @@
 [node name="Game" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172772, 4.82004, 9.91128 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172772, 8.43052, 9.91128 )
 fov = 87.3
 size = 31.67
 
@@ -18,17 +18,25 @@ light_energy = 0.4
 [node name="Helicopter" parent="." instance=ExtResource( 1 )]
 transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, 0, 4.39643, 0 )
 
+[node name="AirplaneSpawner" type="Node" parent="."]
+script = ExtResource( 4 )
+paths = [ "res://Game/Airplane.tscn" ]
+min_y = 10.0
+max_y = 15.0
+min_spawn_interval = 3000
+max_spawn_interval = 4000
+
 [node name="SkyscraperSpawner" type="Node" parent="."]
 script = ExtResource( 4 )
 paths = [ "res://Game/GreenSkyscraper.tscn", "res://Game/YellowSkyscraper.tscn", "res://Game/RedSkyscraper.tscn" ]
-min_y = -10.0
-max_y = -5.0
+min_y = -7.0
+max_y = -2.0
 
 [node name="CoinSpawner" type="Node" parent="."]
 script = ExtResource( 4 )
 paths = [ "res://Game/Coin.tscn" ]
 copies_of_each = 10
-max_y = 20.0
+max_y = 15.0
 max_instance_per_interval = 3
 
 [node name="Score" type="RichTextLabel" parent="."]

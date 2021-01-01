@@ -29,8 +29,9 @@ func _ready():
 			available_object_pool.append(object)
 			
 			get_parent().call_deferred('add_child_below_node', self, object)
-		
-	pass
+			
+	last_spawn_time_ms = OS.get_system_time_msecs()
+	rand_spawn_interval_ms = rand_range(min_spawn_interval, max_spawn_interval)
 
 func _process(delta):
 	var time_diff: int = OS.get_system_time_msecs() - last_spawn_time_ms
