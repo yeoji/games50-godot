@@ -13,4 +13,14 @@ func start() -> void:
 	current_velocity = velocity
 
 func reset() -> void:
+	show()
 	current_velocity = 0
+	
+func _on_body_entered(body):
+	if body.name == "Helicopter":
+		PlayerState.score += points
+		
+		var score_text: RichTextLabel = get_parent().get_node("Score")
+		score_text.set_text(str("COINS: ", PlayerState.score))
+		
+		hide()

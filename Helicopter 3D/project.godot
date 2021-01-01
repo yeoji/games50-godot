@@ -19,6 +19,10 @@ config/name="Helicopter 3D"
 run/main_scene="res://Background/Background.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerState="*res://Game/Scripts/PlayerState.gd"
+
 [display]
 
 window/size/width=1280
