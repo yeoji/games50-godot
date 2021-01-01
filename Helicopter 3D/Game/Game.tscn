@@ -17,8 +17,9 @@ fov = 87.3
 size = 31.67
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499172, 14.7954, 36.4798 )
-light_energy = 0.4
+transform = Transform( 1, 0, 0, 0, 0.784441, 0.620204, 0, -0.620204, 0.784441, 0.0499172, 19.8124, 14.4576 )
+light_energy = 0.5
+shadow_enabled = true
 
 [node name="Helicopter" parent="." instance=ExtResource( 1 )]
 transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, 0, 8.59532, 0 )
@@ -36,13 +37,15 @@ script = ExtResource( 4 )
 paths = [ "res://Game/GreenSkyscraper.tscn", "res://Game/YellowSkyscraper.tscn", "res://Game/RedSkyscraper.tscn" ]
 min_y = -7.0
 max_y = -2.0
+min_spawn_interval = 2000
+max_spawn_interval = 4000
 
 [node name="CoinSpawner" type="Node" parent="."]
 script = ExtResource( 4 )
 paths = [ "res://Game/Coin.tscn" ]
 copies_of_each = 10
-min_y = 5.0
-max_y = 15.0
+min_y = 3.0
+max_y = 18.0
 max_spawn_interval = 3000
 max_instance_per_interval = 3
 
