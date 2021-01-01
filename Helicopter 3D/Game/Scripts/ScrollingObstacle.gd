@@ -13,3 +13,10 @@ func start() -> void:
 
 func reset() -> void:
 	current_velocity = 0
+
+func _on_body_entered(body: Node):
+	if body.name == "Helicopter":
+		var game_over_text: RichTextLabel = get_parent().get_node("GameOver")
+		game_over_text.show()
+		
+		body.queue_free()
