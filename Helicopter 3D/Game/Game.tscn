@@ -7,7 +7,7 @@
 [node name="Game" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172772, 8.43052, 9.91128 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172772, 8.43052, 12.3101 )
 fov = 87.3
 size = 31.67
 
@@ -36,6 +36,7 @@ max_y = -2.0
 script = ExtResource( 4 )
 paths = [ "res://Game/Coin.tscn" ]
 copies_of_each = 10
+min_y = 5.0
 max_y = 15.0
 max_spawn_interval = 3000
 max_instance_per_interval = 3
@@ -52,17 +53,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GameOver" type="RichTextLabel" parent="."]
+[node name="GameOver" type="Label" parent="."]
 visible = false
-margin_left = 511.812
-margin_top = 469.265
-margin_right = 724.812
-margin_bottom = 514.265
-custom_fonts/normal_font = ExtResource( 3 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "GAME OVER"
-fit_content_height = true
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -243.675
+margin_top = -138.74
+margin_right = 256.325
+margin_bottom = -1.74011
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "GAME OVER
+YOUR SCORE:
+%d COINS
+PRESS SPACE TO RESTART!"
+align = 1
+valign = 1

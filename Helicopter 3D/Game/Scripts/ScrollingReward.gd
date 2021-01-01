@@ -18,6 +18,11 @@ func reset() -> void:
 	
 func _on_body_entered(body):
 	if body.name == "Helicopter":
+		var pickup: CPUParticles = load("res://Game/Pickup.tscn").instance()
+		pickup.transform.origin = body.get("translation")
+		pickup.set_emitting(true)
+		get_parent().call_deferred('add_child_below_node', self, pickup)
+	
 		PlayerState.score += points
 		
 		var score_text: RichTextLabel = get_parent().get_node("Score")

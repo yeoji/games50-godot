@@ -39,7 +39,7 @@ _data = [ Vector2( 0.0171428, 1.03269 ), 0.0, 0.0, 0, 0, Vector2( 1, 5 ), 0.0, 0
 
 [sub_resource type="Gradient" id=10]
 offsets = PoolRealArray( 0.192053, 0.940397, 0.986755 )
-colors = PoolColorArray( 0.052413, 0.052413, 0.052413, 0.717647, 0.126632, 0.126632, 0.126632, 0.14902, 0.216475, 0.216475, 0.216475, 0.227451 )
+colors = PoolColorArray( 0.101562, 0.101133, 0.101133, 0.717647, 0.126632, 0.126632, 0.126632, 0.14902, 0.216475, 0.216475, 0.216475, 0.227451 )
 
 [node name="Explosion" type="CPUParticles"]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
@@ -70,7 +70,7 @@ scale_amount_curve = SubResource( 4 )
 color_ramp = SubResource( 5 )
 
 [node name="Smoke" type="CPUParticles" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 emitting = false
 amount = 500
 lifetime = 0.8
