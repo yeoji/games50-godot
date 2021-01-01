@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Coin.FBX-7fc515da6c9471ffaed24d569d0e0a75.scn"
+path="res://.import/coin.glb-e1eaf6ff352c5173ce02e37411151c3e.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Coin/Coin.FBX"
-dest_files=[ "res://.import/Coin.FBX-7fc515da6c9471ffaed24d569d0e0a75.scn" ]
+source_file="res://Assets/Models/Coin/coin.glb"
+dest_files=[ "res://.import/coin.glb-e1eaf6ff352c5173ce02e37411151c3e.scn" ]
 
 [params]
 

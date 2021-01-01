@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game/Helicopter.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game/Scripts/ObjectPool.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Fonts/SuperMario256.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Game/Scripts/ObjectPool.gd" type="Script" id=4]
 
 [node name="Game" type="Spatial"]
 
@@ -11,14 +11,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172772, 4.82004, 9.91128 )
 fov = 87.3
 size = 31.67
 
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499172, 14.7954, 36.4798 )
+light_energy = 0.4
+
 [node name="Helicopter" parent="." instance=ExtResource( 1 )]
 transform = Transform( -8.14603e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -8.14603e-08, 0, 4.39643, 0 )
 
 [node name="SkyscraperSpawner" type="Node" parent="."]
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 paths = [ "res://Game/GreenSkyscraper.tscn", "res://Game/YellowSkyscraper.tscn", "res://Game/RedSkyscraper.tscn" ]
 min_y = -10.0
 max_y = -5.0
+
+[node name="CoinSpawner" type="Node" parent="."]
+script = ExtResource( 4 )
+paths = [ "res://Game/Coin.tscn" ]
+copies_of_each = 10
+max_y = 20.0
+max_instance_per_interval = 3
 
 [node name="GameOver" type="RichTextLabel" parent="."]
 visible = false
