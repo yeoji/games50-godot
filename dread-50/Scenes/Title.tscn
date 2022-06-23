@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/Horrormaster.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Fonts/Horrorfind.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/TitleScene.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="TitleScene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 317.523
+margin_top = 150.198
+margin_right = 728.523
+margin_bottom = 268.198
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.647059, 0.105882, 0.105882, 1 )
+text = "Dread 50"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PressEnter" type="Label" parent="."]
+margin_left = 390.466
+margin_top = 435.542
+margin_right = 650.466
+margin_bottom = 494.542
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.498039, 0.0705882, 0.0705882, 1 )
+text = "Press Enter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
